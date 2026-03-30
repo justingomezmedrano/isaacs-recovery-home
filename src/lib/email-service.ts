@@ -1,3 +1,16 @@
+/*
+ * EMAIL SERVICE - Handles sending all emails from the site
+ *
+ * Uses Nodemailer with SMTP (MXRoute) to send:
+ * - Contact form notifications to admin
+ * - Intake application notifications to Program Director
+ * - Auto-reply confirmations to users
+ *
+ * SMTP credentials are configured in .env.local:
+ *   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+ *
+ * To change email provider, update the SMTP settings in .env.local
+ */
 import nodemailer from 'nodemailer'
 
 export interface EmailData {

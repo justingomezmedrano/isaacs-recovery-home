@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* ============================================================
+   COLOR SCHEME - Change these values to update the entire site
+   ============================================================
+   --background:      Main page background color (warm off-white)
+   --foreground:      Body text color (dark navy)
+   --primary:         Buttons, links, interactive elements (blue)
+   --primary-light:   Icon backgrounds, highlights (light blue)
+   --secondary:       Faith/warmth accents, scripture sections (gold)
+   --secondary-light: Secondary section backgrounds (light amber)
+   --accent:          Success states, checkmarks, hope (green)
+   --accent-light:    Success message backgrounds (light green)
+   --card-bg:         Card and form backgrounds (white)
+   --section-alt:     Alternating section backgrounds (light gray)
+   --header-bg:       Navigation, footer, page headers (dark blue)
+   --border:          Card borders, dividers (soft gray)
+   --muted:           Secondary text, descriptions (medium gray)
+   ============================================================ */
 :root {
   --background: #FAFAF8;
   --foreground: #1a1a2e;
@@ -16,6 +33,9 @@
   --muted: #64748B;
 }
 
+/* Maps CSS variables to Tailwind utility classes
+   e.g., bg-primary, text-foreground, border-border, etc.
+   Add new colors here to use them as Tailwind classes */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -41,6 +61,7 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+/* Serif font used for scripture quotes and tagline */
 .font-serif {
   font-family: var(--font-lora), Georgia, 'Times New Roman', serif;
 }

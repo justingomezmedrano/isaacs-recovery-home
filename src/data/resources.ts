@@ -1,3 +1,14 @@
+/*
+ * RECOVERY RESOURCES - External links and hotlines
+ *
+ * Displayed on the /resources page organized by category.
+ * Each category has an icon, title, and list of resources.
+ *
+ * To add a resource: add to the resources array in the relevant category
+ * To add a category: add a new object to the recoveryResources array
+ * Available icons: "Phone", "Users", "Briefcase", "Heart", "BookOpen"
+ * To add more icons, update the iconMap in src/app/resources/page.tsx
+ */
 export interface Resource {
   title: string
   description: string

@@ -1,3 +1,15 @@
+/*
+ * SITE CONFIGURATION - Central place for all site-wide settings
+ *
+ * Values are loaded from environment variables (.env.local) with fallback defaults.
+ * To change company name, phone, director name, etc.:
+ *   Option 1: Update values in .env.local (preferred for deployment)
+ *   Option 2: Change the fallback defaults after the || below
+ *
+ * Scripture verses and program details (rent, curfew) are hardcoded here.
+ * To add a new scripture, add it to the scripture object below.
+ * To change rent or curfew times, update the values directly.
+ */
 export const siteConfig = {
   companyName: process.env.NEXT_PUBLIC_COMPANY_NAME || "Isaac's Recovery Home",
   tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || "To Pray is to let go and let God take over",

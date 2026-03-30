@@ -1,12 +1,29 @@
+/*
+ * NAVIGATION - Sticky top navigation bar
+ *
+ * To add a new page to the navigation:
+ *   1. Add an entry to the navItems array below (name, href, icon)
+ *   2. Icons come from lucide-react: https://lucide.dev/icons
+ *
+ * To change the logo:
+ *   Replace public/images/logo.png with your new logo image
+ *
+ * To change the "Call Now" phone number:
+ *   Update NEXT_PUBLIC_CONTACT_PHONE in .env.local
+ *
+ * Navigation background color is "header-bg" from globals.css
+ */
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
-import { Menu, X, Home, Users, ClipboardList, BookOpen, Phone, Cross } from 'lucide-react'
+import { Menu, X, Home, Users, ClipboardList, BookOpen, Phone } from 'lucide-react'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
+  /* Add, remove, or reorder navigation links here */
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'About', href: '/about', icon: Users },
@@ -20,12 +37,16 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center gap-3">
-            <Cross className="text-secondary w-8 h-8" />
-            <div>
-              <span className="text-xl font-bold text-white">
-                {process.env.NEXT_PUBLIC_COMPANY_NAME || "Isaac's Recovery Home"}
-              </span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Isaac's Recovery Home"
+              width={44}
+              height={44}
+              className="rounded"
+            />
+            <span className="text-xl font-bold text-white">
+              {process.env.NEXT_PUBLIC_COMPANY_NAME || "Isaac's Recovery Home"}
+            </span>
           </Link>
 
           <div className="hidden md:flex space-x-6">

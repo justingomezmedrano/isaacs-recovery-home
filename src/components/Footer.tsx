@@ -1,3 +1,16 @@
+/*
+ * FOOTER - Site-wide footer displayed on every page
+ *
+ * Contains:
+ * - Company description and tagline
+ * - Quick navigation links (add/remove in the ul below)
+ * - Legal page links (Privacy Policy, Terms of Service)
+ * - Contact info (director name, phone, email from site-config.ts)
+ * - No iLLusion Software attribution (required branding)
+ *
+ * All dynamic values (company name, phone, email, etc.) come from
+ * src/lib/site-config.ts which reads from .env.local
+ */
 import Link from 'next/link'
 import { siteConfig } from '@/lib/site-config'
 

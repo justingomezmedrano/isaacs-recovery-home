@@ -1,3 +1,14 @@
+/*
+ * CONTACT FORM - Simple contact form on the /contact page
+ *
+ * Fields: name, email, phone (optional), message
+ * On submit, sends email to admin and auto-reply to user.
+ * Includes honeypot field (_gotcha) for spam prevention.
+ *
+ * To add a new field:
+ *   1. Add the input element in the form JSX below
+ *   2. Update the API route (src/app/api/contact/route.ts) to read the new field
+ */
 'use client'
 
 import { useState } from 'react'

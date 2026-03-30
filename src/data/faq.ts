@@ -1,3 +1,11 @@
+/*
+ * FAQ - Frequently Asked Questions
+ *
+ * Displayed as an expandable accordion on the About page.
+ * To add a new question: add a { question, answer } object to the array.
+ * To reorder: move items up/down in the array.
+ * To remove: delete the object from the array.
+ */
 export const faqItems = [
   {
     question: "Who is eligible to live at Isaac's Recovery Home?",

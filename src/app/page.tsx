@@ -1,6 +1,23 @@
+/*
+ * HOME PAGE - Main landing page
+ *
+ * Sections (top to bottom):
+ *   1. Hero - Logo, company name, tagline, scripture, CTA buttons
+ *   2. Mission Statement - Brief description of the program
+ *   3. Program Highlights - 3 feature cards (from src/data/program-info.ts)
+ *   4. Scripture Quote - Philippians 4:6-7 (from site-config.ts)
+ *   5. How It Works - 3-step process (from src/data/program-info.ts)
+ *   6. Scripture Quote - Mark 12:31
+ *   7. CTA Banner - Phone number and Apply button
+ *
+ * To change hero content, edit the JSX below or update site-config.ts
+ * To change program highlights, edit src/data/program-info.ts
+ * To add/remove sections, add/remove JSX blocks in this file
+ */
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, ArrowRight, ClipboardList } from 'lucide-react'
 import { motion } from 'framer-motion'
 import ProgramCard from '@/components/ProgramCard'
@@ -21,6 +38,14 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <Image
+              src="/images/logo.png"
+              alt="Isaac's Recovery Home Logo"
+              width={160}
+              height={160}
+              className="mx-auto mb-6 rounded-lg shadow-lg"
+              priority
+            />
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {siteConfig.companyName}
             </h1>

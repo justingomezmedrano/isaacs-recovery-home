@@ -1,3 +1,28 @@
+/*
+ * INTAKE FORM - Multi-step application form (6 steps)
+ *
+ * This is the online version of the PDF intake packet.
+ * On submission, it sends the application via email to the Program Director.
+ *
+ * Steps:
+ *   1. Personal Information (name, phone, email, emergency contact)
+ *   2. Substance Use History (drug of choice, length/last date of use)
+ *   3. Medical History (conditions, medications, mental health, allergies)
+ *   4. Legal Background (criminal history, probation/parole)
+ *   5. Personal Statement (why join, why sobriety matters)
+ *   6. Review & Agreement (summary, checkboxes, submit)
+ *
+ * To add a new field:
+ *   1. Add to the FormData interface and initialFormData below
+ *   2. Add the input in the appropriate step section
+ *   3. Add validation in validateCurrentStep() if required
+ *   4. Update the API route (src/app/api/intake/route.ts) to read the new field
+ *
+ * To add a new step:
+ *   1. Add step name to the STEPS array
+ *   2. Add a new {currentStep === N} section in the JSX
+ *   3. Add validation logic in validateCurrentStep()
+ */
 'use client'
 
 import { useState } from 'react'

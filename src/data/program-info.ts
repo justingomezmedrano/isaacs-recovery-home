@@ -1,3 +1,17 @@
+/*
+ * PROGRAM INFORMATION - All program details in one place
+ *
+ * programHighlights: The 3 feature cards shown on the home page
+ *   - To change card content, edit the title/description below
+ *   - Icons: "Shield", "Heart", "Home" (from ProgramCard.tsx icon map)
+ *   - To add more icons, update the iconMap in src/components/ProgramCard.tsx
+ *
+ * houseRules: Displayed on the About page in a categorized grid
+ *   - Add/remove rules within each category
+ *   - Add new categories by adding a new object to the array
+ *
+ * howItWorks: The 3-step process shown on the home page
+ */
 export const programHighlights = [
   {
     title: "Structure & Accountability",
