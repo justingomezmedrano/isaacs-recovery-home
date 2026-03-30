@@ -12,6 +12,7 @@
  * src/lib/site-config.ts which reads from .env.local
  */
 import Link from 'next/link'
+import PlaceholderBadge from '@/components/PlaceholderBadge'
 import { siteConfig } from '@/lib/site-config'
 
 export default function Footer() {
@@ -72,6 +73,8 @@ export default function Footer() {
                 >
                   {siteConfig.contactEmail}
                 </a>
+                <br />
+                <PlaceholderBadge label="Temp Gmail" type="placeholder" />
               </p>
             </div>
           </div>

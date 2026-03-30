@@ -17,6 +17,7 @@ import { Lora } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StagingBanner from "@/components/StagingBanner"; /* [REMOVE FOR PRODUCTION] Remove this line and <StagingBanner /> below */
 import { Analytics } from "@vercel/analytics/next";
 
 /* Body font - clean sans-serif used for all text */
@@ -73,6 +74,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased min-h-screen flex flex-col`}
       >
+        <StagingBanner /> {/* [REMOVE FOR PRODUCTION] Remove staging banner before launch */}
         <Navigation />
         <main className="flex-grow">{children}</main>
         <Footer />
