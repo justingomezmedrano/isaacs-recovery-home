@@ -62,8 +62,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Email service configuration error' }, { status: 500 })
     }
 
-    const fromEmail = process.env.FROM_EMAIL || 'noreply@isaacs-recovery-home.com'
-    const intakeEmail = process.env.INTAKE_EMAIL || process.env.CONTACT_EMAIL || 'admin@isaacs-recovery-home.com'
+    const fromEmail = process.env.FROM_EMAIL || 'PLACEHOLDER-CHANGE-ME@example.com' /* [CHANGE ME FOR PRODUCTION] Set FROM_EMAIL in .env.local or Vercel */
+    const intakeEmail = process.env.INTAKE_EMAIL || process.env.CONTACT_EMAIL || 'justingomezmedrano7@gmail.com'
     const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME || "Isaac's Recovery Home"
 
     const section = (title: string, content: string) =>

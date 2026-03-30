@@ -1,17 +1,44 @@
 # Next Steps - Post Deployment
 
-## Pre-Deployment (Gary)
+## Completed
 
-- [ ] Set up Justin's Gmail account for Vercel login
-- [ ] Authenticate Vercel CLI with Justin's account (`vercel login`)
-- [ ] Import GitHub repo into Vercel dashboard
-- [ ] Set up Resend account (resend.com) with Justin's email
-- [ ] Get Resend API key and add to Vercel env vars
-- [ ] Add all environment variables to Vercel (see .env.example for full list)
-- [ ] Choose email provider: set EMAIL_PROVIDER to "smtp" or "resend"
-- [ ] Deploy and verify site loads on the .vercel.app URL
-- [ ] Test contact form email delivery in production
-- [ ] Test intake form email delivery in production
+- [x] Set up Justin's Vercel account
+- [x] Authenticate Vercel CLI with Justin's account
+- [x] Link GitHub repo to Vercel project
+- [x] Add all environment variables to Vercel production
+- [x] Deploy to production: https://isaacs-recovery-home.vercel.app
+- [x] Fix Next.js and Nodemailer vulnerabilities (0 CVEs)
+- [x] Update CONTACT_EMAIL and INTAKE_EMAIL to justingomezmedrano7@gmail.com
+
+## Placeholders Still Needing Real Values [CHANGE ME FOR PRODUCTION]
+
+These are currently set to placeholder or temporary values:
+
+- [ ] **FROM_EMAIL** - Currently `noreply@no-illusion.com` (using Gary's MXRoute). Needs its own sender address once Resend or custom domain email is set up
+- [ ] **SMTP credentials** - Currently using No iLLusion's MXRoute. Switch to Resend or Justin's own SMTP when ready
+- [ ] **NEXT_PUBLIC_COMPANY_URL** - Currently `isaacs-recovery-home.vercel.app`. Update when custom domain is purchased
+- [ ] **NEXT_PUBLIC_DOMAIN_NAME** - Same as above
+- [ ] **Custom domain** - Purchase and point to Vercel
+- [ ] **Resident Handbook PDF** - Need the actual handbook PDF in `public/documents/`
+- [ ] **Logo** - Using the collage.png from templateDocs. May want a cleaner/higher-res version
+- [ ] **Facility photos** - No real photos on the site yet
+- [ ] **Facility address/location** - Not displayed on the site yet
+
+## Email Setup (Pick One)
+
+- [ ] **Option A: Resend** (recommended for now)
+  - Sign up at resend.com with Justin's Gmail
+  - Get API key, add as RESEND_API_KEY in Vercel
+  - Change EMAIL_PROVIDER to "resend" in Vercel
+  - Use `onboarding@resend.dev` as FROM_EMAIL until custom domain
+- [ ] **Option B: Keep SMTP** (current)
+  - Works now via No iLLusion MXRoute
+  - Not ideal long-term (using Gary's email infra)
+
+## Connect GitHub for Auto-Deploy
+
+- [ ] In Vercel dashboard: Settings > Git > Connect justingomezmedrano/isaacs-recovery-home
+- [ ] This enables auto-deploy on every push to main (no manual `vercel --prod` needed)
 
 ## Design Review (Justin)
 
