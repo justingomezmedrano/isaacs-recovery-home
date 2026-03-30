@@ -4,6 +4,20 @@ All notable changes to Isaac's Recovery Home website.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) with semantic versioning.
 
+## [0.3.0] - 2026-03-30
+
+### Changed
+- Upgraded Next.js 15.5.3 -> 16.2.1 (critical vulnerability fixes: RCE, DoS, source exposure)
+- Upgraded Nodemailer 7.0.5 -> 8.0.4 (SMTP command injection fix)
+- All contact emails now route to justingomezmedrano7@gmail.com
+- All code fallback defaults marked with [CHANGE ME FOR PRODUCTION] comments
+- .env.local placeholders documented with change instructions
+- Deployed to Vercel: https://isaacs-recovery-home.vercel.app
+
+### Added
+- Vercel project linked and 18 env vars configured for production
+- TODO updated with completed items and remaining placeholder inventory
+
 ## [0.2.0] - 2026-03-30
 
 ### Added
