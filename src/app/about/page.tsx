@@ -147,11 +147,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Downloads */}
+      {/* Downloads - All PDFs are in public/documents/
+         To add a new document: place the PDF in public/documents/ and add a link below
+         To remove a document: delete the <a> block and remove the file from public/documents/ */}
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-foreground mb-8">Documents</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <a
               href="/documents/Isaac_Recovery_Home_Handbook.pdf"
               download
@@ -160,7 +162,7 @@ export default function AboutPage() {
               <Download className="text-primary flex-shrink-0" size={24} />
               <div>
                 <h3 className="font-semibold text-foreground">Resident Handbook</h3>
-                <p className="text-muted text-sm">Complete program rules and guidelines (PDF)</p>
+                <p className="text-muted text-sm">Complete program rules and guidelines</p>
               </div>
             </a>
             <a
@@ -170,8 +172,52 @@ export default function AboutPage() {
             >
               <Download className="text-primary flex-shrink-0" size={24} />
               <div>
-                <h3 className="font-semibold text-foreground">Intake Form (PDF)</h3>
-                <p className="text-muted text-sm">Printable intake application packet (PDF)</p>
+                <h3 className="font-semibold text-foreground">Intake Packet</h3>
+                <p className="text-muted text-sm">Full intake application with house rules agreement</p>
+              </div>
+            </a>
+            <a
+              href="/documents/Isaac_Recovery_Home_Fillable_Intake.pdf"
+              download
+              className="bg-card-bg border border-border rounded-xl p-6 hover:shadow-md transition-shadow flex items-center gap-4"
+            >
+              <Download className="text-primary flex-shrink-0" size={24} />
+              <div>
+                <h3 className="font-semibold text-foreground">Fillable Intake Form</h3>
+                <p className="text-muted text-sm">Single-page fillable intake form</p>
+              </div>
+            </a>
+            <a
+              href="/documents/Isaac_Recovery_Home_Employment_Policy.pdf"
+              download
+              className="bg-card-bg border border-border rounded-xl p-6 hover:shadow-md transition-shadow flex items-center gap-4"
+            >
+              <Download className="text-primary flex-shrink-0" size={24} />
+              <div>
+                <h3 className="font-semibold text-foreground">Employment Policy</h3>
+                <p className="text-muted text-sm">Employment search and accountability requirements</p>
+              </div>
+            </a>
+            <a
+              href="/documents/Isaac_Recovery_Home_Liability_Policy.pdf"
+              download
+              className="bg-card-bg border border-border rounded-xl p-6 hover:shadow-md transition-shadow flex items-center gap-4"
+            >
+              <Download className="text-primary flex-shrink-0" size={24} />
+              <div>
+                <h3 className="font-semibold text-foreground">Liability Policy</h3>
+                <p className="text-muted text-sm">Personal responsibility and liability agreement</p>
+              </div>
+            </a>
+            <a
+              href="/documents/Isaac_Recovery_Home_Orientation.pdf"
+              download
+              className="bg-card-bg border border-border rounded-xl p-6 hover:shadow-md transition-shadow flex items-center gap-4"
+            >
+              <Download className="text-primary flex-shrink-0" size={24} />
+              <div>
+                <h3 className="font-semibold text-foreground">Orientation & Mission</h3>
+                <p className="text-muted text-sm">Mission statement and program orientation</p>
               </div>
             </a>
           </div>
