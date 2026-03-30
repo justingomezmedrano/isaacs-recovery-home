@@ -94,6 +94,16 @@ export default function Footer() {
               Designed, created, and property of No iLLusion Software
             </a>
           </p>
+          <p className="mt-1">
+            <a
+              href="https://no-illusion.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-secondary transition-colors"
+            >
+              no-illusion.com
+            </a>
+          </p>
         </div>
       </div>
     </footer>
