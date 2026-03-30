@@ -12,8 +12,8 @@ Isaac's Recovery Home website is a serverless Next.js application deployed on Ve
                                        |--> Static Pages (SSG at build time)
                                        |--> API Routes (Serverless Functions)
                                               |
-                                              |--> /api/contact --> [Nodemailer] --> [MXRoute SMTP] --> Email
-                                              |--> /api/intake  --> [Nodemailer] --> [MXRoute SMTP] --> Email
+                                              |--> /api/contact --> [EmailService] --> SMTP or Resend --> Email
+                                              |--> /api/intake  --> [EmailService] --> SMTP or Resend --> Email
 ```
 
 ## Key Decisions
@@ -41,6 +41,17 @@ Both forms follow the same pattern:
 4. Server sends auto-reply confirmation to user
 5. Server returns JSON success/error
 
+## Email Provider System
+
+The site supports two email providers via `src/lib/email-service.ts`:
+
+| Provider | Set `EMAIL_PROVIDER` to | Requires | Free Tier |
+|----------|------------------------|----------|-----------|
+| SMTP | `smtp` | SMTP_HOST, SMTP_USER, SMTP_PASS | Depends on SMTP provider |
+| Resend | `resend` | RESEND_API_KEY | 100 emails/day |
+
+To switch providers: change `EMAIL_PROVIDER` in `.env.local` (or Vercel dashboard). No code changes needed. Both providers use the same `EmailData` interface and produce identical results for consumers.
+
 ## Environment Variables
 
-All configuration is externalized via environment variables. The `site-config.ts` module provides centralized access with sensible defaults. This enables rebranding without code changes.
+All configuration is externalized via environment variables. The `site-config.ts` module provides centralized access with sensible defaults. This enables rebranding without code changes. See `.env.example` for the complete list with descriptions.

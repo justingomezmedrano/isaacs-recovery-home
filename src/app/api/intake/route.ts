@@ -49,9 +49,16 @@ export async function POST(request: NextRequest) {
     const sobrietyError = validateRequired(data.whySobriety, 'Personal statement (why sobriety)', 10, 5000)
     if (sobrietyError) return NextResponse.json({ error: sobrietyError }, { status: 400 })
 
+    /* Verify email provider is configured (SMTP or Resend) */
+    const isResend = process.env.EMAIL_PROVIDER === 'resend'
     const hasSmtpConfig = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS
-    if (!hasSmtpConfig) {
+    const hasResendConfig = process.env.RESEND_API_KEY
+    if (!isResend && !hasSmtpConfig) {
       console.error('Missing SMTP configuration')
+      return NextResponse.json({ error: 'Email service configuration error' }, { status: 500 })
+    }
+    if (isResend && !hasResendConfig) {
+      console.error('Missing Resend API key')
       return NextResponse.json({ error: 'Email service configuration error' }, { status: 500 })
     }
 

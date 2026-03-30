@@ -5,7 +5,10 @@
 - [ ] Set up Justin's Gmail account for Vercel login
 - [ ] Authenticate Vercel CLI with Justin's account (`vercel login`)
 - [ ] Import GitHub repo into Vercel dashboard
-- [ ] Add all environment variables to Vercel (copy from .env.local)
+- [ ] Set up Resend account (resend.com) with Justin's email
+- [ ] Get Resend API key and add to Vercel env vars
+- [ ] Add all environment variables to Vercel (see .env.example for full list)
+- [ ] Choose email provider: set EMAIL_PROVIDER to "smtp" or "resend"
 - [ ] Deploy and verify site loads on the .vercel.app URL
 - [ ] Test contact form email delivery in production
 - [ ] Test intake form email delivery in production

@@ -27,6 +27,6 @@
 
 | File | Path | Description |
 |------|------|-------------|
-| email-service.ts | src/lib/email-service.ts | SMTP email service using Nodemailer |
+| email-service.ts | src/lib/email-service.ts | Dual-provider email service (SMTP via Nodemailer + Resend API) |
 | form-validation.ts | src/lib/form-validation.ts | Shared form validation and sanitization utilities |
 | site-config.ts | src/lib/site-config.ts | Centralized site configuration from environment variables |

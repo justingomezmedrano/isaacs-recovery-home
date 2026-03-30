@@ -4,6 +4,21 @@ All notable changes to Isaac's Recovery Home website.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) with semantic versioning.
 
+## [0.2.0] - 2026-03-30
+
+### Added
+- Resend API as dual email provider option alongside SMTP
+- Comprehensive code comments on all components, data files, and utilities
+- Logo image in navigation bar and home page hero
+- docs/TODO.md with post-deployment checklist and design review guide
+- Full documentation suite (ARCHITECTURE, COMPONENTS, API_ROUTES, SETUP, CHANGELOG)
+
+### Changed
+- Email service now supports both SMTP (Nodemailer) and Resend API
+- Switch providers by changing EMAIL_PROVIDER in .env.local ("smtp" or "resend")
+- API routes (contact + intake) validate config for whichever provider is active
+- .env.example updated with Resend configuration and descriptive comments
+
 ## [0.1.0] - 2026-03-30
 
 ### Added
