@@ -23,7 +23,6 @@ import { motion } from 'framer-motion'
 import ProgramCard from '@/components/ProgramCard'
 import ScriptureQuote from '@/components/ScriptureQuote'
 import CTABanner from '@/components/CTABanner'
-import PlaceholderBadge from '@/components/PlaceholderBadge'
 import { programHighlights, howItWorks } from '@/data/program-info'
 import { siteConfig } from '@/lib/site-config'
 
@@ -39,17 +38,14 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative inline-block">
-              <Image
-                src="/images/logo.png"
-                alt="Isaac's Recovery Home Logo"
-                width={160}
-                height={160}
-                className="mx-auto mb-2 rounded-lg shadow-lg"
-                priority
-              />
-              <div className="text-center"><PlaceholderBadge label="PLACEHOLDER - Need higher-res logo" /></div>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Isaac's Recovery Home Logo"
+              width={160}
+              height={160}
+              className="mx-auto mb-6 rounded-lg shadow-lg"
+              priority
+            />
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {siteConfig.companyName}
             </h1>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Phone, Mail, Clock } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
-import PlaceholderBadge from '@/components/PlaceholderBadge'
 import { siteConfig } from '@/lib/site-config'
 
 export const metadata: Metadata = {
@@ -62,7 +61,6 @@ export default function ContactPage() {
                     >
                       {siteConfig.contactEmail}
                     </a>
-                    <PlaceholderBadge label="PLACEHOLDER - Temporary Gmail" />
                     <p className="text-muted text-sm mt-1">
                       We respond within 24 to 48 hours
                     </p>
