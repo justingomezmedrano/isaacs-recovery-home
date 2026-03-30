@@ -74,7 +74,7 @@ export default function Footer() {
                   {siteConfig.contactEmail}
                 </a>
                 <br />
-                <PlaceholderBadge label="Temp Gmail" type="placeholder" />
+                <PlaceholderBadge label="PLACEHOLDER - Temporary Gmail" />
               </p>
             </div>
           </div>

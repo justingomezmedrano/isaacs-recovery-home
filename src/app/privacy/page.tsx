@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import PlaceholderBadge from '@/components/PlaceholderBadge'
 import { siteConfig } from '@/lib/site-config'
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default function PrivacyPage() {
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">Privacy Policy</h1>
           <p className="text-white/70 mt-2">Effective Date: March 30, 2026</p>
-          <div className="mt-3"><PlaceholderBadge label="Needs legal review before launch" type="verify" /></div>
         </div>
       </section>
 

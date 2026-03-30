@@ -48,7 +48,7 @@ export default function HomePage() {
                 className="mx-auto mb-2 rounded-lg shadow-lg"
                 priority
               />
-              <div className="text-center"><PlaceholderBadge label="Need higher-res logo" type="todo" /></div>
+              <div className="text-center"><PlaceholderBadge label="PLACEHOLDER - Need higher-res logo" /></div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {siteConfig.companyName}

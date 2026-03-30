@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Phone, Users, Briefcase, Heart, BookOpen, ExternalLink } from 'lucide-react'
 import { recoveryResources } from '@/data/resources'
 import CTABanner from '@/components/CTABanner'
-import { PlaceholderBlock } from '@/components/PlaceholderBadge'
 
 export const metadata: Metadata = {
   title: 'Recovery Resources',
@@ -50,7 +49,6 @@ export default function ResourcesPage() {
 
       {/* Resources */}
       <section className="py-16 px-4 bg-background">
-        <PlaceholderBlock label="VERIFY ALL LINKS - Justin should confirm these are the right resources for his program. Links are real but may not be the ones he recommends." type="verify">
         <div className="container mx-auto max-w-4xl space-y-12">
           {recoveryResources.map((category) => {
             const Icon = iconMap[category.icon] || BookOpen
@@ -103,7 +101,6 @@ export default function ResourcesPage() {
             )
           })}
         </div>
-        </PlaceholderBlock>
       </section>
 
       <CTABanner />

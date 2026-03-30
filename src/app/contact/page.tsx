@@ -62,10 +62,9 @@ export default function ContactPage() {
                     >
                       {siteConfig.contactEmail}
                     </a>
-                    <PlaceholderBadge label="Temp Gmail - needs real email" type="placeholder" />
+                    <PlaceholderBadge label="PLACEHOLDER - Temporary Gmail" />
                     <p className="text-muted text-sm mt-1">
                       We respond within 24 to 48 hours
-                      <PlaceholderBadge label="Verify response time" type="verify" />
                     </p>
                   </div>
                 </div>
@@ -77,7 +76,6 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Hours</h3>
                     <p className="text-muted">Available by phone during business hours</p>
-                    <PlaceholderBadge label="Need actual hours" type="todo" />
                     <p className="text-muted text-sm mt-1">
                       For urgent needs, please call directly
                     </p>
