@@ -4,6 +4,11 @@ All notable changes to Isaac's Recovery Home website.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) with semantic versioning.
 
+## [0.3.1] - 2026-03-31
+
+### Added
+- Quick Reference guide (docs/QUICK_REFERENCE.md) for non-technical users to find and change common site content like phone numbers, FAQ, colors, house rules, and resources without needing developer experience
+
 ## [0.3.0] - 2026-03-30
 
 ### Changed
