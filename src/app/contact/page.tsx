@@ -23,88 +23,91 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Contact Info */}
       <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                    <a
-                      href={`tel:${siteConfig.contactPhone}`}
-                      className="text-primary text-xl font-bold hover:text-primary/80 transition-colors"
-                    >
-                      {siteConfig.contactPhone}
-                    </a>
-                    <p className="text-muted text-sm mt-1">
-                      Ask for {siteConfig.directorName}, Program Director
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a
-                      href={`mailto:${siteConfig.contactEmail}`}
-                      className="text-primary hover:text-primary/80 transition-colors"
-                    >
-                      {siteConfig.contactEmail}
-                    </a>
-                    <p className="text-muted text-sm mt-1">
-                      We respond within 24 to 48 hours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Hours</h3>
-                    <p className="text-muted">Available by phone during business hours</p>
-                    <p className="text-muted text-sm mt-1">
-                      For urgent needs, please call directly
-                    </p>
-                  </div>
-                </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
+                <Phone className="text-primary" size={20} />
               </div>
-
-              <div className="mt-8 bg-secondary-light border border-secondary/20 rounded-xl p-6">
-                <h3 className="font-semibold text-foreground mb-2">Need Immediate Help?</h3>
-                <p className="text-muted text-sm mb-3">
-                  If you are in crisis, please contact one of these resources:
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
+                <a
+                  href={`tel:${siteConfig.contactPhone}`}
+                  className="text-primary text-lg font-bold hover:text-primary/80 transition-colors"
+                >
+                  {siteConfig.contactPhone}
+                </a>
+                <p className="text-muted text-sm mt-1">
+                  Ask for {siteConfig.directorName}
                 </p>
-                <ul className="space-y-2 text-sm">
-                  <li>
-                    <strong>988 Suicide & Crisis Lifeline:</strong>{' '}
-                    <a href="tel:988" className="text-primary font-semibold">988</a>
-                  </li>
-                  <li>
-                    <strong>SAMHSA Helpline:</strong>{' '}
-                    <a href="tel:1-800-662-4357" className="text-primary font-semibold">1-800-662-4357</a>
-                  </li>
-                </ul>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Send a Message</h2>
-              <ContactForm />
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
+                <Mail className="text-primary" size={20} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                <a
+                  href={`mailto:${siteConfig.contactEmail}`}
+                  className="text-primary hover:text-primary/80 transition-colors"
+                >
+                  {siteConfig.contactEmail}
+                </a>
+                <p className="text-muted text-sm mt-1">
+                  We respond within 24 to 48 hours.
+                  <br />
+                  Or use the form below if you don&apos;t have access to your own email.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
+                <Clock className="text-primary" size={20} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">Hours</h3>
+                <p className="text-muted">Available by phone during business hours</p>
+                <p className="text-muted text-sm mt-1">
+                  For urgent needs, please call directly
+                </p>
+              </div>
             </div>
           </div>
+
+          <div className="mt-8 bg-secondary-light border border-secondary/20 rounded-xl p-6">
+            <h3 className="font-semibold text-foreground mb-2">Need Immediate Help?</h3>
+            <p className="text-muted text-sm mb-3">
+              If you are in crisis, please contact one of these resources:
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <strong>988 Suicide & Crisis Lifeline:</strong>{' '}
+                <a href="tel:988" className="text-primary font-semibold">988</a>
+              </li>
+              <li>
+                <strong>SAMHSA Helpline:</strong>{' '}
+                <a href="tel:1-800-662-4357" className="text-primary font-semibold">1-800-662-4357</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-16 px-4 bg-section-alt">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="text-2xl font-bold text-foreground mb-2">Send a Message</h2>
+          <p className="text-muted mb-6">
+            Fill out the form below and we&apos;ll get back to you as soon as possible.
+          </p>
+          <ContactForm />
         </div>
       </section>
     </>
