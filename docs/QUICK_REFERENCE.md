@@ -1,40 +1,60 @@
 # Quick Reference - Common Changes
 
-This guide is for anyone who needs to update the Isaac's Recovery Home website, even without coding experience. Each row tells you exactly what file to open and what to look for.
+This guide is for anyone who needs to update the Isaac's Recovery Home website, even without coding experience. Each row tells you exactly what to change and where.
 
 ## Before You Start
 
-- The website code lives in the `src/` folder
-- Site settings live in `.env.local` (a plain text file in the project root)
-- Content like FAQ questions and house rules lives in `src/data/` as simple text lists
-- After making changes locally, run `npm run build` to check for errors before deploying
-- On Vercel (the hosting platform), environment variables are set in the project dashboard under Settings > Environment Variables
+- The website is hosted on **Vercel** (https://vercel.com). Changes to code files are deployed automatically when pushed to GitHub.
+- **Environment variables** (company name, phone, email settings) are set in **two places**:
+  1. **Vercel dashboard** (for the live production site): Project > Settings > Environment Variables
+  2. **`.env.local`** (for local development only): A plain text file in the project root
+  - When changing environment variables, **always update Vercel first** since that controls the live site. Update `.env.local` only if you're also running the site locally for testing.
+- Content like FAQ questions and house rules lives in code files under `src/data/` as simple text lists.
+- After making changes to code files locally, run `npm run build` to check for errors before pushing.
 
-## Quick Lookup Table
+## Environment Variables (Company Info, Email, Contact)
 
-| I want to change...              | Open this file                  | What to look for                                                                 |
-|----------------------------------|---------------------------------|----------------------------------------------------------------------------------|
-| Company name                     | `.env.local`                    | `NEXT_PUBLIC_COMPANY_NAME=`                                                      |
-| Phone number                     | `.env.local`                    | `NEXT_PUBLIC_CONTACT_PHONE=`                                                     |
-| Program Director name            | `.env.local`                    | `NEXT_PUBLIC_DIRECTOR_NAME=`                                                     |
-| Contact email (shown on site)    | `.env.local`                    | `NEXT_PUBLIC_CONTACT_EMAIL=`                                                     |
-| Tagline / motto                  | `.env.local`                    | `NEXT_PUBLIC_BRAND_TAGLINE=`                                                     |
-| Copyright year                   | `.env.local`                    | `NEXT_PUBLIC_COPYRIGHT_YEAR=`                                                    |
-| Where contact form emails go     | `.env.local`                    | `CONTACT_EMAIL=`                                                                 |
-| Where intake applications go     | `.env.local`                    | `INTAKE_EMAIL=`                                                                  |
-| Weekly rent amount               | **See "How to Change Pricing" below** (multiple files)                                        |
-| Curfew times                     | `src/lib/site-config.ts`        | Lines with `curfewWeekday:` and `curfewWeekend:` - change the times in quotes    |
-| Scripture verses                 | `src/lib/site-config.ts`        | The `scripture:` section - edit the `verse:` and `reference:` text               |
-| Site colors                      | `src/app/globals.css`           | Lines 20-34 - hex color codes (see "How to Change Colors" below)                 |
-| Logo image                       | `public/images/logo.png`        | Replace the file with a new image (keep the same filename)                       |
-| FAQ questions                    | `src/data/faq.ts`               | Edit, add, or remove `{ question, answer }` entries (see example below)          |
-| House rules                      | `src/data/program-info.ts`      | The `houseRules` section - edit text inside the `rules:` lists                   |
-| Home page feature cards          | `src/data/program-info.ts`      | The `programHighlights` section - edit `title` and `description` text            |
-| "How It Works" steps             | `src/data/program-info.ts`      | The `howItWorks` section - edit `title` and `description` for each step          |
-| Recovery resources / hotlines    | `src/data/resources.ts`         | Add, edit, or remove resources in each category (see example below)              |
-| Navigation menu links            | `src/components/Navigation.tsx` | The `navItems` array near the top - add `{ name, href, icon }` entries           |
-| Downloadable PDFs                | `public/documents/`             | Add or replace PDF files in this folder, then link to them from the About page   |
-| Pre-launch banner                | `src/components/PreLaunchBanner.tsx` | Edit the text, or delete the import from `src/app/layout.tsx` to remove it  |
+These settings are controlled by environment variables. **Change them in Vercel** (Settings > Environment Variables) to update the live site.
+
+| I want to change...              | Variable name                    | Example value                   |
+|----------------------------------|----------------------------------|---------------------------------|
+| Company name                     | `NEXT_PUBLIC_COMPANY_NAME`       | `Isaac's Recovery Home`         |
+| Phone number                     | `NEXT_PUBLIC_CONTACT_PHONE`      | `940-232-8252`                  |
+| Program Director name            | `NEXT_PUBLIC_DIRECTOR_NAME`      | `Justin Gomez Medrano`          |
+| Contact email (shown on site)    | `NEXT_PUBLIC_CONTACT_EMAIL`      | `justingomezmedrano7@gmail.com` |
+| Tagline / motto                  | `NEXT_PUBLIC_BRAND_TAGLINE`      | `To Pray is to let go...`      |
+| Copyright year                   | `NEXT_PUBLIC_COPYRIGHT_YEAR`     | `2026`                          |
+| Where contact form emails go     | `CONTACT_EMAIL`                  | `justingomezmedrano7@gmail.com` |
+| Where intake applications go     | `INTAKE_EMAIL`                   | `justingomezmedrano7@gmail.com` |
+| Resend email API key             | `RESEND_API_KEY`                 | `re_xxxxxxxxxxxx`               |
+| Email "from" address             | `FROM_EMAIL`                     | `noreply@isaacsrecoveryhome.com`|
+
+**How to change a Vercel environment variable:**
+1. Go to https://vercel.com and open the Isaac's Recovery Home project
+2. Click **Settings** > **Environment Variables**
+3. Find the variable you want to change, click the three dots menu, and select **Edit**
+4. Update the value and click **Save**
+5. Go to the **Deployments** tab and click **Redeploy** on the latest deployment for changes to take effect
+
+## Content Changes (Code Files)
+
+These changes require editing code files and pushing to GitHub.
+
+| I want to change...              | Open this file                       | What to look for                                                            |
+|----------------------------------|--------------------------------------|-----------------------------------------------------------------------------|
+| Weekly rent / deposit amount     | **See "How to Change Pricing" below** (multiple files)                                               |
+| Curfew times                     | `src/lib/site-config.ts`             | Lines with `curfewWeekday:` and `curfewWeekend:`                            |
+| Scripture verses                 | `src/lib/site-config.ts`             | The `scripture:` section                                                    |
+| Site colors                      | `src/app/globals.css`                | Lines 20-34 - hex color codes (see "How to Change Colors" below)            |
+| Logo image                       | `public/images/logo.png`             | Replace the file with a new image (keep the same filename)                  |
+| FAQ questions                    | `src/data/faq.ts`                    | Edit, add, or remove `{ question, answer }` entries (see example below)     |
+| House rules                      | `src/data/program-info.ts`           | The `houseRules` section - edit text inside the `rules:` lists              |
+| Home page feature cards          | `src/data/program-info.ts`           | The `programHighlights` section - edit `title` and `description` text       |
+| "How It Works" steps             | `src/data/program-info.ts`           | The `howItWorks` section - edit `title` and `description` for each step     |
+| Recovery resources / hotlines    | `src/data/resources.ts`              | Add, edit, or remove resources in each category (see example below)         |
+| Navigation menu links            | `src/components/Navigation.tsx`      | The `navItems` array near the top                                           |
+| Downloadable PDFs                | `public/documents/`                  | Add or replace PDF files, then link from the About page                     |
+| Pre-launch banner                | `src/components/PreLaunchBanner.tsx`  | Edit the text, or delete the import from `src/app/layout.tsx` to remove it |
 
 ## How to Change Pricing (IMPORTANT - Multiple Files!)
 
@@ -45,7 +65,7 @@ Pricing (weekly rent and deposit) appears in FIVE places on the site. If the pri
 | 1. Central config values        | `src/lib/site-config.ts`        | `weeklyRent:` and `moveInDeposit:` (change amounts)|
 | 2. "Affordable Recovery" card   | `src/data/program-info.ts`      | Search for the dollar amount in `programHighlights`|
 | 3. House rules list             | `src/data/program-info.ts`      | Search for the dollar amount in `houseRules`       |
-| 4. FAQ answer about cost        | `src/data/faq.ts`               | The answer to "How much does it cost to live here?" |
+| 4. FAQ answer about cost        | `src/data/faq.ts`               | The answer to "How much does it cost to live here?"|
 | 5. Intake form agreement        | `src/components/IntakeForm.tsx`  | Search for the dollar amount (around line 351)     |
 | 6. PDF documents                | `public/documents/`             | Handbook and Orientation PDFs (need regeneration)  |
 
@@ -128,9 +148,9 @@ To remove a rule, delete the entire line including the comma.
 
 ## Email Setup
 
-The site sends emails when someone submits the contact form or intake application. Email is sent via Resend (https://resend.com).
+The site sends emails when someone submits the contact form or intake application. Email is sent via **Resend** (https://resend.com).
 
-Configuration in `.env.local`:
+These are configured as **Vercel environment variables** (not in code files):
 - `RESEND_API_KEY` - Your Resend API key (starts with `re_`)
 - `FROM_EMAIL` - The "from" address (must be verified in Resend dashboard)
 - `CONTACT_EMAIL` - Where contact form submissions are sent

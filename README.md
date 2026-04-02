@@ -13,8 +13,9 @@ A modern, mobile-first website for Isaac's Recovery Home - a faith-based structu
 - [x] **Privacy Policy & Terms** - Hosted internally with proper legal coverage
 - [x] **SEO Optimized** - Metadata, Open Graph, and keyword targeting for local search
 - [x] **Security Headers** - CSP, HSTS, X-Frame-Options, and more
-- [x] **Email System** - SMTP-based contact and intake form submissions
+- [x] **Email System** - Resend API for contact and intake form submissions
 - [x] **Vercel Analytics** - Anonymous usage tracking
+- [x] **Pre-Launch Banner** - Dismissable announcement for pre-application screening phase
 
 ## Tech Stack
 
@@ -23,7 +24,7 @@ A modern, mobile-first website for Isaac's Recovery Home - a faith-based structu
 - **Styling**: Tailwind CSS v4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Email**: Nodemailer (SMTP)
+- **Email**: Resend
 - **Hosting**: Vercel (serverless, free tier)
 - **Analytics**: Vercel Analytics
 - **Fonts**: Geist Sans, Lora (serif for scripture)
@@ -53,8 +54,10 @@ Copy `.env.example` to `.env.local` and fill in:
 
 - `NEXT_PUBLIC_COMPANY_NAME` - Display name
 - `NEXT_PUBLIC_CONTACT_PHONE` - Program Director phone
-- `SMTP_*` - Email server credentials
+- `RESEND_API_KEY` - Resend API key for email delivery
 - `FROM_EMAIL` / `CONTACT_EMAIL` / `INTAKE_EMAIL` - Email routing
+
+For the live site, set these in the **Vercel dashboard** under Settings > Environment Variables.
 
 ### Building for Production
 
@@ -84,6 +87,47 @@ public/
   documents/            # Downloadable PDFs
 ```
 
+## Quick Reference - Where to Change Things
+
+For a complete guide (including step-by-step instructions for non-technical users), see [docs/QUICK_REFERENCE.md](docs/QUICK_REFERENCE.md).
+
+### Environment Variables (set in Vercel dashboard for live site)
+
+| Setting                          | Variable name                    |
+|----------------------------------|----------------------------------|
+| Company name                     | `NEXT_PUBLIC_COMPANY_NAME`       |
+| Phone number                     | `NEXT_PUBLIC_CONTACT_PHONE`      |
+| Program Director name            | `NEXT_PUBLIC_DIRECTOR_NAME`      |
+| Contact email (shown on site)    | `NEXT_PUBLIC_CONTACT_EMAIL`      |
+| Where contact form emails go     | `CONTACT_EMAIL`                  |
+| Where intake applications go     | `INTAKE_EMAIL`                   |
+| Email API key                    | `RESEND_API_KEY`                 |
+| Email "from" address             | `FROM_EMAIL`                     |
+
+### Content (code files)
+
+| Content                    | File                              |
+|----------------------------|-----------------------------------|
+| FAQ questions & answers    | `src/data/faq.ts`                 |
+| House rules                | `src/data/program-info.ts`        |
+| Home page feature cards    | `src/data/program-info.ts`        |
+| Recovery resources         | `src/data/resources.ts`           |
+| Colors                     | `src/app/globals.css`             |
+| Scripture verses           | `src/lib/site-config.ts`          |
+| Curfew, rent, deposit      | `src/lib/site-config.ts`          |
+| Navigation links           | `src/components/Navigation.tsx`   |
+| Pre-launch banner          | `src/components/PreLaunchBanner.tsx` |
+| Downloadable PDFs          | `public/documents/`               |
+
+### Pricing appears in multiple files!
+
+If the weekly rent or deposit changes, update ALL of these:
+1. `src/lib/site-config.ts` - weeklyRent and moveInDeposit values
+2. `src/data/program-info.ts` - program highlights and house rules text
+3. `src/data/faq.ts` - FAQ answer about cost
+4. `src/components/IntakeForm.tsx` - intake form agreement step
+5. `public/documents/` - PDF handbook and orientation (need regeneration)
+
 ## Deployment
 
 Deployed on [Vercel](https://vercel.com) with automatic builds on push.
@@ -103,26 +147,19 @@ Deployed on [Vercel](https://vercel.com) with automatic builds on push.
 - [x] Mobile-first responsive design
 - [x] SEO optimization
 
-### Phase 2: Enhanced User Experience (1-3 Months)
-- [ ] Google Maps integration for facility location
-- [ ] Testimonials section (with resident consent)
-- [ ] Photo gallery of the facility
-- [ ] Blog/devotional section for recovery content
-- [ ] Multi-language support (Spanish)
+### Future Enhancements
 
-### Phase 3: Operational Tools (3-6 Months)
-- [ ] Resident portal for tracking meetings and employment
-- [ ] Digital drug test logging
-- [ ] Chore assignment and tracking system
-- [ ] Rent payment tracking
-- [ ] Communication system for house announcements
+*You gotta' pay for this kind of work, cousin ;)*
 
-### Phase 4: Growth and Outreach (6-12 Months)
-- [ ] Integration with local AA meeting directories
-- [ ] Referral tracking for partner organizations
-- [ ] Donation/support page
-- [ ] Volunteer sign-up system
-- [ ] Success stories and outcome tracking
+- Google Maps integration for facility location
+- Testimonials section (with resident consent)
+- Photo gallery of the facility
+- Blog/devotional section for recovery content
+- Multi-language support (Spanish)
+- Resident portal for tracking meetings and employment
+- Digital drug test logging and chore tracking
+- Rent payment tracking
+- Donation/support page
 
 ---
 
