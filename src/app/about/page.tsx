@@ -1,3 +1,22 @@
+/*
+ * ABOUT PAGE - Program details, house rules, FAQ, and downloads
+ *
+ * WHERE THE CONTENT COMES FROM:
+ *   - "Our Approach" text: Written directly in this file (below)
+ *   - "What to Expect" section: Written directly in this file (below)
+ *   - "House Rules" section: Imported from src/data/program-info.ts (the houseRules array)
+ *     >> To change house rules, rent amount, or add/remove rules, edit src/data/program-info.ts
+ *   - "Meet the Director": Director name/phone from src/lib/site-config.ts
+ *   - "Documents" section: Links to PDFs in public/documents/ folder
+ *   - "FAQ" section: Imported from src/data/faq.ts (the faqItems array)
+ *     >> To change FAQ answers (including pricing info), edit src/data/faq.ts
+ *
+ * PRICING IS NOT IN THIS FILE. It lives in:
+ *   - src/data/program-info.ts (house rules, program highlights on home page)
+ *   - src/data/faq.ts (FAQ answer about cost)
+ *   - src/lib/site-config.ts (weeklyRent and moveInDeposit values)
+ *   - src/components/IntakeForm.tsx (the agreement step of the intake form)
+ */
 import type { Metadata } from 'next'
 import { Download, User } from 'lucide-react'
 import HouseRules from '@/components/HouseRules'

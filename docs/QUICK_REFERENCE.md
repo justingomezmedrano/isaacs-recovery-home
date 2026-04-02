@@ -22,7 +22,7 @@ This guide is for anyone who needs to update the Isaac's Recovery Home website, 
 | Copyright year                   | `.env.local`                    | `NEXT_PUBLIC_COPYRIGHT_YEAR=`                                                    |
 | Where contact form emails go     | `.env.local`                    | `CONTACT_EMAIL=`                                                                 |
 | Where intake applications go     | `.env.local`                    | `INTAKE_EMAIL=`                                                                  |
-| Weekly rent amount               | `src/lib/site-config.ts`        | Line with `weeklyRent:` - change the dollar amount in quotes                     |
+| Weekly rent amount               | **See "How to Change Pricing" below** (multiple files)                                        |
 | Curfew times                     | `src/lib/site-config.ts`        | Lines with `curfewWeekday:` and `curfewWeekend:` - change the times in quotes    |
 | Scripture verses                 | `src/lib/site-config.ts`        | The `scripture:` section - edit the `verse:` and `reference:` text               |
 | Site colors                      | `src/app/globals.css`           | Lines 20-34 - hex color codes (see "How to Change Colors" below)                 |
@@ -34,6 +34,22 @@ This guide is for anyone who needs to update the Isaac's Recovery Home website, 
 | Recovery resources / hotlines    | `src/data/resources.ts`         | Add, edit, or remove resources in each category (see example below)              |
 | Navigation menu links            | `src/components/Navigation.tsx` | The `navItems` array near the top - add `{ name, href, icon }` entries           |
 | Downloadable PDFs                | `public/documents/`             | Add or replace PDF files in this folder, then link to them from the About page   |
+| Pre-launch banner                | `src/components/PreLaunchBanner.tsx` | Edit the text, or delete the import from `src/app/layout.tsx` to remove it  |
+
+## How to Change Pricing (IMPORTANT - Multiple Files!)
+
+Pricing (weekly rent and deposit) appears in FIVE places on the site. If the price changes, ALL of these must be updated:
+
+| What to update                  | File                            | What to look for                                   |
+|---------------------------------|---------------------------------|----------------------------------------------------|
+| 1. Central config values        | `src/lib/site-config.ts`        | `weeklyRent:` and `moveInDeposit:` (change amounts)|
+| 2. "Affordable Recovery" card   | `src/data/program-info.ts`      | Search for the dollar amount in `programHighlights`|
+| 3. House rules list             | `src/data/program-info.ts`      | Search for the dollar amount in `houseRules`       |
+| 4. FAQ answer about cost        | `src/data/faq.ts`               | The answer to "How much does it cost to live here?" |
+| 5. Intake form agreement        | `src/components/IntakeForm.tsx`  | Search for the dollar amount (around line 351)     |
+| 6. PDF documents                | `public/documents/`             | Handbook and Orientation PDFs (need regeneration)  |
+
+Why is pricing in so many places? The site text is written naturally (not templated), so each mention is slightly different wording. This makes the site read better, but means you need to update all mentions when pricing changes.
 
 ## How to Change Colors
 
@@ -112,15 +128,15 @@ To remove a rule, delete the entire line including the comma.
 
 ## Email Setup
 
-The site sends emails when someone submits the contact form or intake application. Email is configured in `.env.local`:
+The site sends emails when someone submits the contact form or intake application. Email is sent via Resend (https://resend.com).
 
-- `EMAIL_PROVIDER=smtp` - Use an SMTP server (like MXRoute or Gmail)
-- Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and `SMTP_PASS` for SMTP
+Configuration in `.env.local`:
+- `RESEND_API_KEY` - Your Resend API key (starts with `re_`)
+- `FROM_EMAIL` - The "from" address (must be verified in Resend dashboard)
+- `CONTACT_EMAIL` - Where contact form submissions are sent
+- `INTAKE_EMAIL` - Where intake applications are sent
 
-Or switch to the Resend API:
-
-- `EMAIL_PROVIDER=resend` - Use Resend (free tier: 100 emails/day)
-- Set `RESEND_API_KEY` with your key from https://resend.com
+To manage your Resend account, domains, and API keys: https://resend.com/overview
 
 ## Need a Developer?
 

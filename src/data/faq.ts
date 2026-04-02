@@ -1,7 +1,16 @@
 /*
  * FAQ - Frequently Asked Questions
  *
- * Displayed as an expandable accordion on the About page.
+ * DISPLAYED ON: The About page (/about) as an expandable accordion.
+ *
+ * CONTAINS PRICING: The "How much does it cost" answer includes
+ * the weekly rent ($160) and deposit ($100). If pricing changes,
+ * update that answer below AND also update:
+ *   - src/data/program-info.ts (house rules + program highlights)
+ *   - src/lib/site-config.ts (weeklyRent and moveInDeposit)
+ *   - src/components/IntakeForm.tsx (agreement step)
+ *   - public/documents/ PDFs (handbook and orientation)
+ *
  * To add a new question: add a { question, answer } object to the array.
  * To reorder: move items up/down in the array.
  * To remove: delete the object from the array.

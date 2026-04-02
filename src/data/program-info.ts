@@ -1,16 +1,32 @@
 /*
  * PROGRAM INFORMATION - All program details in one place
  *
- * programHighlights: The 3 feature cards shown on the home page
- *   - To change card content, edit the title/description below
+ * THIS FILE CONTAINS PRICING, HOUSE RULES, AND PROGRAM CARD TEXT.
+ * If you need to change the weekly rent, deposit, curfew rules, or
+ * any program details, this is one of the main files to edit.
+ *
+ * WHAT'S IN THIS FILE AND WHERE IT APPEARS ON THE SITE:
+ *
+ * programHighlights (line ~16): The 3 feature cards on the HOME page
+ *   - "Structure & Accountability" card
+ *   - "Faith & Fellowship" card
+ *   - "Affordable Recovery" card  << CONTAINS PRICING ($160/week, $100 deposit)
  *   - Icons: "Shield", "Heart", "Home" (from ProgramCard.tsx icon map)
  *   - To add more icons, update the iconMap in src/components/ProgramCard.tsx
  *
- * houseRules: Displayed on the About page in a categorized grid
+ * houseRules (line ~33): The house rules grid on the ABOUT page (/about)
+ *   - Employment rules, Recovery Program rules, House Rules, Conduct
+ *   - House Rules category contains weekly rent amount and deposit
  *   - Add/remove rules within each category
  *   - Add new categories by adding a new object to the array
  *
- * howItWorks: The 3-step process shown on the home page
+ * howItWorks (line ~75): The 3-step "How It Works" section on the HOME page
+ *
+ * ALSO CHECK THESE FILES WHEN CHANGING PRICING:
+ *   - src/data/faq.ts (FAQ answer about cost)
+ *   - src/lib/site-config.ts (weeklyRent and moveInDeposit values)
+ *   - src/components/IntakeForm.tsx (agreement step, lines ~350-352)
+ *   - public/documents/ (PDF handbook and orientation - must be regenerated)
  */
 export const programHighlights = [
   {

@@ -1,14 +1,22 @@
 /*
  * SITE CONFIGURATION - Central place for all site-wide settings
  *
- * Values are loaded from environment variables (.env.local) with fallback defaults.
+ * USED ON: Every page on the site. This is the single source of truth for
+ * company name, phone number, director name, scripture verses, and pricing.
+ *
  * To change company name, phone, director name, etc.:
  *   Option 1: Update values in .env.local (preferred for deployment)
  *   Option 2: Change the fallback defaults after the || below
  *
- * Scripture verses and program details (rent, curfew) are hardcoded here.
+ * PRICING (weeklyRent, moveInDeposit): These values are used by
+ * some components. But pricing also appears as text in other files:
+ *   - src/data/program-info.ts (house rules text, program highlights)
+ *   - src/data/faq.ts (FAQ answer about cost)
+ *   - src/components/IntakeForm.tsx (agreement step)
+ *   - public/documents/ PDFs (handbook and orientation)
+ *
+ * Scripture verses and curfew times are hardcoded here.
  * To add a new scripture, add it to the scripture object below.
- * To change rent or curfew times, update the values directly.
  */
 export const siteConfig = {
   companyName: process.env.NEXT_PUBLIC_COMPANY_NAME || "Isaac's Recovery Home",
