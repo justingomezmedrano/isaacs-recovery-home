@@ -20,7 +20,8 @@ export const siteConfig = {
   contactPhone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "940-232-8252",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "justingomezmedrano7@gmail.com",
   directorName: process.env.NEXT_PUBLIC_DIRECTOR_NAME || "Justin Gomez Medrano",
-  weeklyRent: "$150",
+  weeklyRent: "$160",
+  moveInDeposit: "$100",
   curfewWeekday: "10:00 PM",
   curfewWeekend: "11:00 PM",
   scripture: {

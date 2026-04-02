@@ -348,7 +348,8 @@ export default function IntakeForm() {
                 <li>- Employment search daily 9 AM to 4 PM</li>
                 <li>- 2+ AA meetings per week, Sunday church</li>
                 <li>- Zero-tolerance drug and alcohol policy</li>
-                <li>- $150 weekly rent</li>
+                <li>- $160 weekly rent</li>
+                <li>- $100 move-in deposit required</li>
                 <li>- Random drug testing</li>
               </ul>
             </div>

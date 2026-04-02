@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Isaac's Recovery Home - Sober Living for Men",
     description:
-      "Faith-based structured sober living for men recovering from alcohol and drug addiction. $150/week. Call 940-232-8252.",
+      "Faith-based structured sober living for men recovering from alcohol and drug addiction. $160/week. Call 940-232-8252.",
     type: "website",
   },
 };

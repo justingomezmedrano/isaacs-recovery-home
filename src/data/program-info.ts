@@ -25,7 +25,7 @@ export const programHighlights = [
   },
   {
     title: "Affordable Recovery",
-    description: "$150 per week for a safe, sober living environment with employment assistance, resume building, and community support.",
+    description: "$160 per week with a $100 move-in deposit. A safe, sober living environment with employment assistance, resume building, and community support.",
     icon: "Home" as const,
   },
 ]
@@ -57,7 +57,8 @@ export const houseRules = [
       "Overnight absences require advance approval",
       "No unauthorized guests or visitors without approval",
       "Keep rooms and shared spaces clean",
-      "Weekly rent of $150 due on time",
+      "Weekly rent of $160 due on time",
+      "$100 move-in deposit required",
     ],
   },
   {
