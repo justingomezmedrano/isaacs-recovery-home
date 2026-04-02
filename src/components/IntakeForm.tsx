@@ -349,7 +349,7 @@ export default function IntakeForm() {
                 <li>- 2+ AA meetings per week, Sunday church</li>
                 <li>- Zero-tolerance drug and alcohol policy</li>
                 <li>- $160 weekly rent</li>
-                <li>- $100 move-in deposit required</li>
+                <li>- $100 nonrefundable move-in deposit</li>
                 <li>- Random drug testing</li>
               </ul>
             </div>

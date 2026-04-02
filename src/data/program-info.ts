@@ -25,7 +25,7 @@ export const programHighlights = [
   },
   {
     title: "Affordable Recovery",
-    description: "$160 per week with a $100 move-in deposit. A safe, sober living environment with employment assistance, resume building, and community support.",
+    description: "$160 per week with a $100 nonrefundable move-in deposit. A safe, sober living environment with employment assistance, resume building, and community support.",
     icon: "Home" as const,
   },
 ]

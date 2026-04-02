@@ -13,7 +13,7 @@ export const faqItems = [
   },
   {
     question: "How much does it cost to live here?",
-    answer: "Weekly rent is $160, with a $100 move-in deposit required at intake. This covers housing in a safe, sober living environment. Late fees apply for non-payment. We also provide employment assistance to help residents become financially stable.",
+    answer: "Weekly rent is $160, with a $100 nonrefundable move-in deposit required at intake. This covers housing in a safe, sober living environment. Late fees apply for non-payment. We also provide employment assistance to help residents become financially stable.",
   },
   {
     question: "Do I need to be employed to move in?",
