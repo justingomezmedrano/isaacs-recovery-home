@@ -41,20 +41,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: messageError }, { status: 400 })
     }
 
-    /* Verify email provider is configured (SMTP or Resend) */
-    const isResend = process.env.EMAIL_PROVIDER === 'resend'
-    const hasSmtpConfig = process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS
-    const hasResendConfig = process.env.RESEND_API_KEY
-    if (!isResend && !hasSmtpConfig) {
-      console.error('Missing SMTP configuration')
-      return NextResponse.json({ error: 'Email service configuration error' }, { status: 500 })
-    }
-    if (isResend && !hasResendConfig) {
-      console.error('Missing Resend API key')
+    /* Verify Resend is configured */
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Missing RESEND_API_KEY')
       return NextResponse.json({ error: 'Email service configuration error' }, { status: 500 })
     }
 
-    const fromEmail = process.env.FROM_EMAIL || 'PLACEHOLDER-CHANGE-ME@example.com' /* [CHANGE ME FOR PRODUCTION] Set FROM_EMAIL in .env.local or Vercel */
+    const fromEmail = process.env.FROM_EMAIL || 'noreply@isaacsrecoveryhome.com'
     const toEmail = process.env.CONTACT_EMAIL || 'justingomezmedrano7@gmail.com'
     const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME || "Isaac's Recovery Home"
 

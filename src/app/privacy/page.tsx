@@ -81,7 +81,7 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Vercel:</strong> Our website is hosted on Vercel. Vercel Analytics collects anonymous
                   usage statistics. See <a href="https://vercel.com/legal/privacy-policy" className="text-primary hover:text-primary/80" target="_blank" rel="noopener noreferrer">Vercel&apos;s Privacy Policy</a>.</li>
-                <li><strong>Email Service:</strong> Form submissions are transmitted via SMTP email service.</li>
+                <li><strong>Email Service:</strong> Form submissions are transmitted via Resend, a transactional email service. See <a href="https://resend.com/legal/privacy-policy" className="text-primary hover:text-primary/80" target="_blank" rel="noopener noreferrer">Resend&apos;s Privacy Policy</a>.</li>
               </ul>
             </div>
 

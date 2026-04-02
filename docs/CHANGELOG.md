@@ -4,6 +4,20 @@ All notable changes to Isaac's Recovery Home website.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) with semantic versioning.
 
+## [0.4.0] - 2026-04-02
+
+### Changed
+- Switched email provider from SMTP/Nodemailer to Resend API exclusively
+- Email service simplified to single-provider architecture (removed dual SMTP/Resend toggle)
+- FROM_EMAIL updated to noreply@isaacsrecoveryhome.com (Resend verified domain)
+- Privacy policy updated to reference Resend instead of SMTP
+
+### Removed
+- Nodemailer dependency and @types/nodemailer
+- SMTP configuration (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE)
+- EMAIL_PROVIDER toggle (no longer needed with single provider)
+- Dual-provider logic from email service, contact route, and intake route
+
 ## [0.3.1] - 2026-03-31
 
 ### Added
