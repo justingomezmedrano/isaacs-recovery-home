@@ -58,7 +58,7 @@ export const houseRules = [
       "No unauthorized guests or visitors without approval",
       "Keep rooms and shared spaces clean",
       "Weekly rent of $160 due on time",
-      "$100 move-in deposit required",
+      "$100 nonrefundable move-in deposit required",
     ],
   },
   {
