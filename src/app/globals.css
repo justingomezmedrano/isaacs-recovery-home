@@ -18,19 +18,19 @@
    --muted:           Secondary text, descriptions (medium gray)
    ============================================================ */
 :root {
-  --background: #050507;
-  --foreground: #e5e5d1;
-  --primary: #DA9C14;
-  --primary-light: #241501;
-  --secondary: #2B57BC;
-  --secondary-light: #010C38;
-  --accent: #FA6996;
-  --accent-light: #2E051A;
-  --card-bg: #000000;
-  --section-alt: #0F0B07;
-  --header-bg: #e1c5a0;
-  --border: #1D1710;
-  --muted: #9B8B74;
+  --background: #FAFAF8;
+  --foreground: #1a1a2e;
+  --primary: #2563EB;
+  --primary-light: #DBEAFE;
+  --secondary: #D4A843;
+  --secondary-light: #FEF3C7;
+  --accent: #059669;
+  --accent-light: #D1FAE5;
+  --card-bg: #FFFFFF;
+  --section-alt: #F0F4F8;
+  --header-bg: #1e3a5f;
+  --border: #E2E8F0;
+  --muted: #64748B;
 }
 
 /* Maps CSS variables to Tailwind utility classes

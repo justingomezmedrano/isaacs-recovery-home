@@ -31,7 +31,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-header-bg via-primary to-header-bg py-20 md:py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(43,87,188,0.15),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,168,67,0.15),transparent_60%)]" />
         <div className="container mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

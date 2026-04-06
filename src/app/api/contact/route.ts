@@ -57,15 +57,15 @@ export async function POST(request: NextRequest) {
 <head>
     <meta charset="utf-8">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #ccc; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #e1c5a0, #DA9C14); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
-        .content { background: #070503; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #1d170f; }
+        .header { background: linear-gradient(135deg, #1e3a5f, #2563EB); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
+        .content { background: #f8fafc; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0; }
         .field { margin: 20px 0; }
-        .label { font-weight: 600; color: #c8beae; margin-bottom: 8px; display: block; }
-        .value { background: black; padding: 12px 16px; border-radius: 8px; border: 1px solid #2e2a24; font-size: 16px; }
-        .message { background: black; padding: 20px; border-radius: 8px; border-left: 4px solid #DA9C14; white-space: pre-wrap; line-height: 1.6; }
-        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d1d5db; font-size: 14px; color: #948d7f; }
+        .label { font-weight: 600; color: #374151; margin-bottom: 8px; display: block; }
+        .value { background: white; padding: 12px 16px; border-radius: 8px; border: 1px solid #d1d5db; font-size: 16px; }
+        .message { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #2563EB; white-space: pre-wrap; line-height: 1.6; }
+        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d1d5db; font-size: 14px; color: #6b7280; }
     </style>
 </head>
 <body>
@@ -81,12 +81,12 @@ export async function POST(request: NextRequest) {
             </div>
             <div class="field">
                 <span class="label">Email:</span>
-                <div class="value"><a href="mailto:${data.email}" style="color: #DA9C14;">${data.email}</a></div>
+                <div class="value"><a href="mailto:${data.email}" style="color: #2563EB;">${data.email}</a></div>
             </div>
             ${data.phone ? `
             <div class="field">
                 <span class="label">Phone:</span>
-                <div class="value"><a href="tel:${data.phone}" style="color: #DA9C14;">${data.phone}</a></div>
+                <div class="value"><a href="tel:${data.phone}" style="color: #2563EB;">${data.phone}</a></div>
             </div>
             ` : ''}
             <div class="field">
@@ -120,11 +120,11 @@ export async function POST(request: NextRequest) {
 <head>
     <meta charset="utf-8">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #ccc; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #e1c5a0, #DA9C14); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
-        .content { background: #070503; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #1d170f; }
-        .highlight { background: black; padding: 20px; border-radius: 8px; border-left: 4px solid #2B57BC; margin: 20px 0; }
+        .header { background: linear-gradient(135deg, #1e3a5f, #2563EB); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
+        .content { background: #f8fafc; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0; }
+        .highlight { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #D4A843; margin: 20px 0; }
         .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d1d5db; text-align: center; }
     </style>
 </head>
@@ -138,7 +138,7 @@ export async function POST(request: NextRequest) {
             <p style="font-size: 18px;">Hi ${data.name},</p>
             <p>Thank you for reaching out to ${companyName}. We have received your message and will respond as soon as possible.</p>
             <div class="highlight">
-                <h3 style="margin-top: 0; color: #2B57BC;">What happens next?</h3>
+                <h3 style="margin-top: 0; color: #D4A843;">What happens next?</h3>
                 <ul style="margin: 15px 0; padding: 0 0 0 20px;">
                     <li style="margin: 8px 0;">We will review your message within 24 to 48 hours</li>
                     <li style="margin: 8px 0;">Our Program Director will reach out to you</li>
@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
                 <p><strong>${process.env.NEXT_PUBLIC_DIRECTOR_NAME || 'Justin Gomez Medrano'}</strong><br>
                 Program Director<br>
                 ${companyName}</p>
-                <p style="font-size: 12px; margin-top: 20px; color: #948d7f;">
+                <p style="font-size: 12px; margin-top: 20px; color: #6b7280;">
                     This confirmation was sent automatically. You can reply directly to this email to reach us.
                 </p>
             </div>
