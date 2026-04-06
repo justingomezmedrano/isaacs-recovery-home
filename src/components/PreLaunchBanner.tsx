@@ -17,25 +17,25 @@ export default function PreLaunchBanner() {
   if (dismissed) return null
 
   return (
-    <div className="relative bg-gradient-to-r from-[#7c3a10] via-[#b45309] to-[#7c3a10] text-white overflow-hidden">
+    <div className="relative bg-gradient-to-r from-[#83c5ef] via-[#4bacf6] to-[#83c5ef] text-black overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(251,191,36,0.2),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(251,191,36,0.15),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(4,64,219,0.2),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(4,64,219,0.15),transparent_60%)]" />
       </div>
       <div className="container mx-auto px-4 py-4 sm:py-5 relative">
         <div className="flex items-center justify-center gap-3 text-center pr-10">
           <div className="hidden sm:flex items-center justify-center w-10 h-10 bg-white/15 rounded-full shrink-0">
-            <Clock size={20} className="text-amber-200" />
+            <Clock size={20} className="text-blue-800" />
           </div>
           <div>
             <p className="text-base sm:text-lg font-bold tracking-wide">
-              <span className="text-amber-200">Now Accepting Pre-Applications</span>
+              <span className="text-blue-800">Now Accepting Pre-Applications</span>
             </p>
             <p className="text-sm sm:text-base text-white/90 mt-0.5">
               Early applicants receive priority placement when we open our doors.{' '}
               <Link
                 href="/admissions"
-                className="inline-flex items-center gap-1 text-white font-bold underline underline-offset-2 decoration-amber-300 hover:text-amber-200 transition-colors duration-200"
+                className="inline-flex items-center gap-1 text-black font-bold underline underline-offset-2 decoration-blue-700 hover:text-blue-800 transition-colors duration-200"
               >
                 Apply today &rarr;
               </Link>

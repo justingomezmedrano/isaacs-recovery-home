@@ -68,18 +68,18 @@ export async function POST(request: NextRequest) {
 <head>
     <meta charset="utf-8">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #ccc; margin: 0; padding: 0; }
         .container { max-width: 700px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #1e3a5f, #2563EB); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
-        .content { background: #f8fafc; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0; }
+        .header { background: linear-gradient(135deg, #e1c5a0, #DA9C14); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
+        .content { background: #070503; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #1d170f; }
         .section { margin: 20px 0; }
-        .section h3 { color: #1e3a5f; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 2px solid #DBEAFE; padding-bottom: 4px; }
-        .value { background: white; padding: 12px 16px; border-radius: 8px; border: 1px solid #d1d5db; }
+        .section h3 { color: #e1c5a0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; border-bottom: 2px solid #241501; padding-bottom: 4px; }
+        .value { background: black; padding: 12px 16px; border-radius: 8px; border: 1px solid #2e2a24; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .field { margin: 8px 0; }
-        .label { font-weight: 600; color: #374151; font-size: 13px; }
-        .statement { background: white; padding: 16px; border-radius: 8px; border-left: 4px solid #D4A843; white-space: pre-wrap; }
-        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d1d5db; font-size: 13px; color: #6b7280; }
+        .label { font-weight: 600; color: #c8beae; font-size: 13px; }
+        .statement { background: black; padding: 16px; border-radius: 8px; border-left: 4px solid #2B57BC; white-space: pre-wrap; }
+        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d1d5db; font-size: 13px; color: #948d7f; }
     </style>
 </head>
 <body>
@@ -161,11 +161,11 @@ export async function POST(request: NextRequest) {
 <head>
     <meta charset="utf-8">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #ccc; margin: 0; padding: 0; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #1e3a5f, #2563EB); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
-        .content { background: #f8fafc; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e2e8f0; }
-        .highlight { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #059669; margin: 20px 0; }
+        .header { background: linear-gradient(135deg, #e1c5a0, #DA9C14); color: white; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center; }
+        .content { background: #070503; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #1d170f; }
+        .highlight { background: black; padding: 20px; border-radius: 8px; border-left: 4px solid #FA6996; margin: 20px 0; }
         .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #d1d5db; text-align: center; }
     </style>
 </head>
@@ -179,7 +179,7 @@ export async function POST(request: NextRequest) {
             <p style="font-size: 18px;">Dear ${data.fullName},</p>
             <p>Thank you for submitting your application to ${companyName}. We have received your intake form and it is now under review.</p>
             <div class="highlight">
-                <h3 style="margin-top: 0; color: #059669;">What happens next?</h3>
+                <h3 style="margin-top: 0; color: #FA6996;">What happens next?</h3>
                 <ul style="margin: 15px 0; padding: 0 0 0 20px;">
                     <li style="margin: 8px 0;">Our Program Director will review your application</li>
                     <li style="margin: 8px 0;">You will be contacted to schedule an intake interview</li>
@@ -191,7 +191,7 @@ export async function POST(request: NextRequest) {
                 <p><strong>${process.env.NEXT_PUBLIC_DIRECTOR_NAME || 'Justin Gomez Medrano'}</strong><br>
                 Program Director<br>
                 ${companyName}</p>
-                <p style="font-size: 12px; margin-top: 20px; color: #6b7280;">
+                <p style="font-size: 12px; margin-top: 20px; color: #948d7f;">
                     This confirmation was sent automatically. You can reply directly to this email.
                 </p>
             </div>
