@@ -11,7 +11,7 @@ A modern, mobile-first website for Isaac's Recovery Home - a faith-based structu
 - [x] **Recovery Resources** - Crisis hotlines, AA/NA meetings, employment help, family support
 - [x] **Downloadable Documents** - PDF handbook and intake form available for download
 - [x] **Privacy Policy & Terms** - Hosted internally with proper legal coverage
-- [x] **SEO Optimized** - Metadata, Open Graph, and keyword targeting for local search
+- [x] **SEO Optimized** - Sitemap, robots.txt, JSON-LD structured data, Open Graph, Twitter Cards, canonical URLs, and keyword targeting for local search
 - [x] **Security Headers** - CSP, HSTS, X-Frame-Options, and more
 - [x] **Email System** - Resend API for contact and intake form submissions
 - [x] **Vercel Analytics** - Anonymous usage tracking
@@ -19,7 +19,7 @@ A modern, mobile-first website for Isaac's Recovery Home - a faith-based structu
 
 ## Tech Stack
 
-- **Framework**: Next.js 15.5.x with App Router
+- **Framework**: Next.js 16.x with App Router
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS v4
 - **Animations**: Framer Motion

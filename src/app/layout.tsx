@@ -20,6 +20,7 @@ import PreLaunchBanner from "@/components/PreLaunchBanner";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { OrganizationSchema, WebSiteSchema } from "@/components/StructuredData";
 
 /* Body font - clean sans-serif used for all text */
 const geistSans = Geist({
@@ -41,6 +42,10 @@ const lora = Lora({
 
 /* SEO metadata - update these when changing site name, description, or keywords */
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_COMPANY_URL ||
+      "https://isaacsrecoveryhome.com"
+  ),
   title: {
     default: "Isaac's Recovery Home - Sober Living for Men",
     template: "%s | Isaac's Recovery Home",
@@ -56,12 +61,53 @@ export const metadata: Metadata = {
     "sober house",
     "Texas sober living",
     "structured sober living",
+    "sober living Texas",
+    "mens recovery home",
+    "halfway house Texas",
+    "sober living near me",
+    "affordable sober living",
+    "Christian recovery home",
+    "faith-based sober house",
+    "drug recovery housing",
+    "alcohol recovery home",
+    "structured living program",
   ],
   openGraph: {
     title: "Isaac's Recovery Home - Sober Living for Men",
     description:
       "Faith-based structured sober living for men recovering from alcohol and drug addiction. $160/week. Call 940-232-8252.",
     type: "website",
+    siteName: "Isaac's Recovery Home",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Isaac's Recovery Home - Faith-based sober living for men",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Isaac's Recovery Home - Sober Living for Men",
+    description:
+      "Faith-based structured sober living for men. Safe, affordable housing with accountability and brotherhood. $160/week.",
+    images: ["/images/logo.png"],
+  },
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -72,6 +118,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <OrganizationSchema />
+        <WebSiteSchema />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased min-h-screen flex flex-col`}
       >

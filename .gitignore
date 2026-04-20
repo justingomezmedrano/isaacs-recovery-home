@@ -46,5 +46,8 @@ reports/
 # Source template documents (not for public repo)
 templateDocs/
 
+# Business documents (confidential, never commit)
+business-docs/
+
 # Claude work
 .claude/

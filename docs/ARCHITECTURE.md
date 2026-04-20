@@ -41,16 +41,25 @@ Both forms follow the same pattern:
 4. Server sends auto-reply confirmation to user
 5. Server returns JSON success/error
 
-## Email Provider System
+## Email Provider
 
-The site supports two email providers via `src/lib/email-service.ts`:
+Email is sent via **Resend** (`src/lib/email-service.ts`). Domain `isaacsrecoveryhome.com` is verified in Resend for sending from `noreply@isaacsrecoveryhome.com`.
 
-| Provider | Set `EMAIL_PROVIDER` to | Requires | Free Tier |
-|----------|------------------------|----------|-----------|
-| SMTP | `smtp` | SMTP_HOST, SMTP_USER, SMTP_PASS | Depends on SMTP provider |
-| Resend | `resend` | RESEND_API_KEY | 100 emails/day |
+| Requires | Free Tier |
+|----------|-----------|
+| `RESEND_API_KEY` | 100 emails/day, 3,000/month |
 
-To switch providers: change `EMAIL_PROVIDER` in `.env.local` (or Vercel dashboard). No code changes needed. Both providers use the same `EmailData` interface and produce identical results for consumers.
+## SEO
+
+The site uses Next.js metadata API for SEO:
+
+- **sitemap.xml** (src/app/sitemap.ts): Auto-generated with all pages, priority-weighted
+- **robots.txt** (src/app/robots.ts): Allows all crawlers, blocks /api/ routes, points to sitemap
+- **JSON-LD Structured Data** (src/components/StructuredData.tsx):
+  - `ResidentialFacility` schema on all pages (name, phone, email, price range, area served)
+  - `WebSite` schema on all pages (publisher info for Google knowledge panel)
+  - `FAQPage` schema on about page (enables rich snippets in search results)
+- **Metadata** (layout.tsx): metadataBase for canonical URLs, Open Graph with image, Twitter Cards, GoogleBot directives
 
 ## Environment Variables
 

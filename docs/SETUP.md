@@ -50,23 +50,17 @@ npm start
 - `NEXT_PUBLIC_COMPANY_NAME`
 - `NEXT_PUBLIC_CONTACT_PHONE`
 - `NEXT_PUBLIC_DIRECTOR_NAME`
-- `EMAIL_PROVIDER` (set to "smtp" or "resend")
-- If SMTP: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`
-- If Resend: `RESEND_API_KEY`
+- `RESEND_API_KEY`
 - `FROM_EMAIL`, `CONTACT_EMAIL`, `INTAKE_EMAIL`
 - `NEXT_PUBLIC_SITE_URL` (production URL)
 
-### Email Provider Setup
+### Email Provider Setup (Resend)
 
-**Option A: SMTP** (e.g., MXRoute, Gmail)
-Set `EMAIL_PROVIDER=smtp` and configure `SMTP_*` variables.
-
-**Option B: Resend** (recommended for quick setup)
 1. Sign up at https://resend.com (free: 100 emails/day, 3,000/month)
 2. Get your API key from the Resend dashboard
-3. Set `EMAIL_PROVIDER=resend` and `RESEND_API_KEY=re_xxxx`
-4. For custom domains, add your domain in Resend settings
-5. Without a custom domain, use `onboarding@resend.dev` as FROM_EMAIL for testing
+3. Set `RESEND_API_KEY=re_xxxx` in Vercel environment variables
+4. Domain `isaacsrecoveryhome.com` is verified in Resend for sending
+5. FROM_EMAIL is `noreply@isaacsrecoveryhome.com`
 
 ## Testing Email
 

@@ -22,6 +22,7 @@ import { Download, User } from 'lucide-react'
 import HouseRules from '@/components/HouseRules'
 import FAQ from '@/components/FAQ'
 import CTABanner from '@/components/CTABanner'
+import { FAQSchema } from '@/components/StructuredData'
 import { faqItems } from '@/data/faq'
 import { siteConfig } from '@/lib/site-config'
 
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <FAQSchema />
       {/* Hero */}
       <section className="bg-gradient-to-r from-header-bg to-primary py-16 px-4">
         <div className="container mx-auto text-center">

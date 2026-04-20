@@ -6,7 +6,7 @@
 - [x] Authenticate Vercel CLI with Justin's account
 - [x] Link GitHub repo to Vercel project
 - [x] Add all environment variables to Vercel production
-- [x] Deploy to production: https://isaacs-recovery-home.vercel.app
+- [x] Deploy to production: https://isaacsrecoveryhome.com
 - [x] Fix Next.js and Nodemailer vulnerabilities (0 CVEs)
 - [x] Update CONTACT_EMAIL and INTAKE_EMAIL to justingomezmedrano7@gmail.com
 
@@ -16,9 +16,9 @@ These are currently set to placeholder or temporary values:
 
 - [ ] **FROM_EMAIL** - Currently `noreply@no-illusion.com` (using Gary's MXRoute). Needs its own sender address once Resend or custom domain email is set up
 - [ ] **SMTP credentials** - Currently using No iLLusion's MXRoute. Switch to Resend or Justin's own SMTP when ready
-- [ ] **NEXT_PUBLIC_COMPANY_URL** - Currently `isaacs-recovery-home.vercel.app`. Update when custom domain is purchased
-- [ ] **NEXT_PUBLIC_DOMAIN_NAME** - Same as above
-- [ ] **Custom domain** - Purchase and point to Vercel
+- [x] **NEXT_PUBLIC_COMPANY_URL** - Set to `isaacsrecoveryhome.com`
+- [x] **NEXT_PUBLIC_DOMAIN_NAME** - Set to `isaacsrecoveryhome.com`
+- [x] **Custom domain** - isaacsrecoveryhome.com pointed to Vercel
 - [ ] **Resident Handbook PDF** - Need the actual handbook PDF in `public/documents/`
 - [ ] **Logo** - Using the collage.png from templateDocs. May want a cleaner/higher-res version
 - [ ] **Facility photos** - No real photos on the site yet
@@ -82,12 +82,13 @@ When giving feedback, it helps to be specific:
 ## Post-Review Action Items
 
 - [ ] Apply Justin's design feedback
-- [ ] Set up custom domain (if purchased)
+- [x] Set up custom domain (isaacsrecoveryhome.com)
 - [ ] Configure production email (Justin's own email or domain)
 - [ ] Update CONTACT_EMAIL and INTAKE_EMAIL to Justin's real inbox
 - [ ] Update FROM_EMAIL if using a custom domain
 - [ ] Add Google Analytics or keep Vercel Analytics
-- [ ] Submit site to Google Search Console for indexing
+- [ ] Submit site to Google Search Console for indexing (sitemap.xml now auto-generated)
+- [ ] Set up Google Business Profile for local search visibility
 - [ ] Create social media links if accounts exist
 
 ## Future Phases (After Launch)

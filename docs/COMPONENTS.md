@@ -14,6 +14,7 @@
 | ContactForm | src/components/ContactForm.tsx | Client | Contact form with validation, submission, and status states |
 | IntakeForm | src/components/IntakeForm.tsx | Client | Multi-step intake application form (6 steps) |
 | StepIndicator | src/components/StepIndicator.tsx | Client | Visual progress indicator for multi-step forms |
+| StructuredData | src/components/StructuredData.tsx | Server | JSON-LD schema markup (OrganizationSchema, WebSiteSchema, FAQSchema) |
 
 ## Data Files
 
@@ -27,6 +28,6 @@
 
 | File | Path | Description |
 |------|------|-------------|
-| email-service.ts | src/lib/email-service.ts | Dual-provider email service (SMTP via Nodemailer + Resend API) |
+| email-service.ts | src/lib/email-service.ts | Email service via Resend API |
 | form-validation.ts | src/lib/form-validation.ts | Shared form validation and sanitization utilities |
 | site-config.ts | src/lib/site-config.ts | Centralized site configuration from environment variables |

@@ -4,6 +4,24 @@ All notable changes to Isaac's Recovery Home website.
 
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) with semantic versioning.
 
+## [0.5.0] - 2026-04-20
+
+### Added
+- Auto-generated `sitemap.xml` via Next.js metadata API (src/app/sitemap.ts) for search engine crawling
+- Auto-generated `robots.txt` via Next.js metadata API (src/app/robots.ts) with sitemap pointer
+- JSON-LD structured data: ResidentialFacility schema, WebSite schema (all pages), FAQPage schema (about page)
+- StructuredData component (src/components/StructuredData.tsx) with OrganizationSchema, WebSiteSchema, FAQSchema
+- Twitter Card meta tags for social sharing
+- Canonical URL via metadataBase in root layout
+- GoogleBot directives for max image/snippet previews
+- 10 additional SEO keywords targeting local recovery searches ("sober living near me", "Christian recovery home", "halfway house Texas", etc.)
+
+### Changed
+- Domain updated from isaacs-recovery-home.vercel.app to isaacsrecoveryhome.com across all code and documentation
+- Open Graph tags expanded with siteName, locale, and image
+- site-config.ts defaults updated to production domain
+- All documentation updated to reflect production domain and SEO additions
+
 ## [0.4.0] - 2026-04-02
 
 ### Changed
@@ -31,7 +49,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) with se
 - All contact emails now route to justingomezmedrano7@gmail.com
 - All code fallback defaults marked with [CHANGE ME FOR PRODUCTION] comments
 - .env.local placeholders documented with change instructions
-- Deployed to Vercel: https://isaacs-recovery-home.vercel.app
+- Deployed to Vercel: https://isaacsrecoveryhome.com
 
 ### Added
 - Vercel project linked and 18 env vars configured for production
